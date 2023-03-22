@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="gameDaoStub" class="com.sg.bullcowapi.data.GameDaoStubImpl"/>
+    <bean id="roundDaoStub" class="com.sg.bullcowapi.data.RoundDaoStubImpl"/>
+
+    <bean  id="service" class="com.sg.bullcowapi.service.BullAndCowServiceImpl">
+        <constructor-arg ref="gameDaoStub"/>
+        <constructor-arg ref="roundDaoStub"/>
+
+    </bean>
+
+
+
+</beans>
